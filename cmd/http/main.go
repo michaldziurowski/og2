@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -76,7 +75,6 @@ func main() {
 
 	e.GET("/dashboard/:username", func(c echo.Context) error {
 		username := c.Param("username")
-		log.Printf("got %s \n", username)
 
 		// handle error when there is no user
 		u := g.GetUser(username)
