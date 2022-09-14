@@ -100,7 +100,8 @@ func main() {
 			return echo.NewHTTPError(http.StatusInternalServerError, err.Error())
 		}
 
-		return c.JSON(http.StatusCreated, cmd)
+        // should return user status after upgrade not cmd
+		return c.JSON(http.StatusOK, cmd)
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))
